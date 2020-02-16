@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace MuppavarapuStateUniversity.Models
 {
@@ -23,6 +24,7 @@ namespace MuppavarapuStateUniversity.Models
         //The Grade property is an enum. The question mark after the Grade type declaration 
         //    indicates that the Grade property is nullable.A grade that's null is different 
         //    from a zero grade — null means a grade isn't known or hasn't been assigned yet.
+        [DisplayFormat(NullDisplayText ="No Grade")]
         public Grade? Grade { get; set; }
 
         public virtual Course Course { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -14,10 +15,16 @@ namespace MuppavarapuStateUniversity.Models
       //    when data is added.If you want to implement your own value generation strategy and override the 
       //    default behaviour, you will use the None option:
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public int CourseID { get; set; }
-    public string Title { get; set; }
-    public int Credits { get; set; }
+        [Display(Name = "Number")]
+        public int CourseID { get; set; }
+        [StringLength(50, MinimumLength = 3)]
+        public string Title { get; set; }
+        [Range(0, 5)]
+        public int Credits { get; set; }
+        public int DepartmentID { get; set; }
 
-    public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<Instructor> Instructors { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 }
 }
