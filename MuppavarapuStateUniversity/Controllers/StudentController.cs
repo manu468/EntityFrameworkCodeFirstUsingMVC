@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using MuppavarapuStateUniversity.DAL;
 using MuppavarapuStateUniversity.Models;
 using PagedList;
+using System.Data.Entity.Infrastructure;
 
 namespace MuppavarapuStateUniversity.Controllers
 {
@@ -117,7 +118,12 @@ namespace MuppavarapuStateUniversity.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            catch (DataException /*dex*/)
+            //catch (DataException /*dex*/)
+            //You were using DataException to try to identify errors that might be transient in order to give a friendly 
+            //        "try again" message.But now that you've turned on a retry policy, the only errors likely to be transient
+            //        will already have been tried and failed several times and the actual exception returned will be wrapped 
+            //        in the RetryLimitExceededException exception.
+            catch (RetryLimitExceededException /*dex*/)
             { //Log the error (uncomment dex variable name and add a line here to write a log.
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
