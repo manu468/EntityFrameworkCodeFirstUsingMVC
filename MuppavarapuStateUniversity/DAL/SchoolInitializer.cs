@@ -21,6 +21,10 @@ namespace MuppavarapuStateUniversity.DAL
 
             var students = new List<Student>
             {
+            //new Student{FirstName="Pani",LastName="Chusko",EnrollmentDate=DateTime.Parse("2005-09-01")},
+            //new Student{FirstName="Kandal",LastName="Gymson",EnrollmentDate=DateTime.Parse("2002-09-01")},
+            //new Student{FirstName="Manu",LastName="Muppavarapu",EnrollmentDate=DateTime.Parse("2003-09-01")},
+            //new Student{FirstName="Puth",LastName="Rocky",EnrollmentDate=DateTime.Parse("2002-09-01")},
             new Student{FirstName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2005-09-01")},
             new Student{FirstName="Meredith",LastName="Alonso",EnrollmentDate=DateTime.Parse("2002-09-01")},
             new Student{FirstName="Arturo",LastName="Anand",EnrollmentDate=DateTime.Parse("2003-09-01")},
