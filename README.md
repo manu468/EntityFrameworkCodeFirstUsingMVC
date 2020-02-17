@@ -8,4 +8,10 @@ Work Flow Create an MVC web app => Set up the site style => Install Entity Frame
 
 <h6>Connection resiliency and command interception commit</h6>
 They are two important features of Entity Framework 6 that are especially valuable when we are deploying to the cloud environment: connection resiliency (automatic retries for transient errors) and command interception (catch all SQL queries sent to the database in order to log or change them).
+deployment prob::
+ When you create the publish profile that you use to configure settings
+ for deploying from Visual Studio, you'll select a check box labeled Update 
+Database. This setting causes the deployment process to automatically configure 
+the application Web.config file on the destination server so that Code First uses 
+the MigrateDatabaseToLatestVersion initializer class.
 
